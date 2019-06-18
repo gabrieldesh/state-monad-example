@@ -1,0 +1,33 @@
+module ExampleTree
+( exampleTree ) where
+
+import TernaryTree
+
+exampleTree :: TernaryTree ()
+exampleTree = Tree () (Tree () (Tree () (Empty)
+                                        (Empty)
+                                        (Empty))
+                               (Tree () (Empty)
+                                        (Empty)
+                                        (Empty))
+                               (Tree () (Empty)
+                                        (Empty)
+                                        (Empty)))
+                      (Tree () (Tree () (Empty)
+                                        (Empty)
+                                        (Empty))
+                               (Tree () (Empty)
+                                        (Empty)
+                                        (Empty))
+                               (Tree () (Empty)
+                                        (Empty)
+                                        (Empty)))
+                      (Tree () (Tree () (Empty)
+                                        (Empty)
+                                        (Empty))
+                               (Tree () (Empty)
+                                        (Empty)
+                                        (Empty))
+                               (Tree () (Empty)
+                                        (Empty)
+                                        (Empty)))
