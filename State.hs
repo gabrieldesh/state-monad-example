@@ -17,8 +17,12 @@ instance Applicative (State s) where
                      in  (f a, s''))
 
 instance Monad (State s) where
-  return = pure
+--return :: a -> (State s) a
+  return x = State (\s -> (x, s))
 
-  x >>= f = State (\s ->
-                   let (y, s') = (unwrap x) s
-                   in  (unwrap (f y)) s')
+--(>>=) :: (State s) a -> (a -> (State s) b) -> (State s) b
+  sa >>= f = State (\s ->
+                    let (a, s')  = (unwrap sa) s
+                        sb       = f a
+                        (b, s'') = (unwrap sb) s'
+                    in  (b, s''))
