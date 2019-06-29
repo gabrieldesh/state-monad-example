@@ -1,7 +1,7 @@
 module State
 ( State(..) ) where
 
-data State s a = State { unwrap :: s -> (a, s) }
+newtype State s a = State { unwrap :: s -> (a, s) }
 
 instance Functor (State s) where
   fmap f x = State (\s ->
